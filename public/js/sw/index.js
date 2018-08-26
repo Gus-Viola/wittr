@@ -12,11 +12,11 @@ self.addEventListener('install', function(event) {
     // TODO: open a cache named 'wittr-static-v1'
     // Add cache the urls from urlsToCache
     caches.open('wittr-static-v1').then(function(cache) {
-        for (let url of urlsToCache) {
-          cache.put(url, response);
-        }
-      return cache;
-      // return cache.addAll(urlsToCache);
+      //   for (let url of urlsToCache) {
+      //     cache.put(url, event.response);
+      //   }
+      // return cache;
+      return cache.addAll(urlsToCache);
     })
   );
 });
